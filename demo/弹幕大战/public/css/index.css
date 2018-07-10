@@ -1,0 +1,23 @@
+header{
+    background-color: crimson;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+header *{
+    margin-right: 10px;
+    margin-top: 0;
+    float: left;
+}
+main{
+    overflow: hidden;
+}
+#movie{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: -2;
+}
