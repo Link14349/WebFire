@@ -77,38 +77,3 @@ function reboundUpdate(obj1) {
     }
     return rebObj;
 }
-
-function airUpdate(obj) {
-    obj.speed *= AIR_RESI;
-    if (obj.speed < 0.01){
-        obj.speed = 0;
-    }
-}
-function gravUpdate(obj) {
-    obj.angle += (180 - obj.angle) * GRAV * 2;
-    if ((obj.angle % 360) > 0 && (obj.angle % 360) < 180){
-        obj.speed += GRAV;
-    } else {
-        obj.speed -= GRAV;
-    }
-}
-function physics(obj){
-    if (obj.get("air")){
-        airUpdate(obj);
-    }
-    if (obj.get("grav")){
-        gravUpdate(obj);
-    }
-    if (obj.get("force")){
-        reboundUpdate(obj);
-    }
-}
-function physicsUpdate(acc) {
-    physicsId = setInterval(function (){
-    	for (var i = 0 ; i < gameObjs.length ; i++){
-            physics(gameObjs[i]);
-		}
-    },acc);
-}
-
-

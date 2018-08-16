@@ -45,7 +45,7 @@ var color = {
         };
         hex.toString = function (){
             return "#" + this.r + this.g + this.b;
-        }
+        };
         return hex;
     },
     rgb: function (hex) {
